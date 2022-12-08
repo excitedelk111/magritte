@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta charset="utf-8" />
+    <title>Magritte VR</title>
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+
+    <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link
+      href="//fonts.googleapis.com/css?family=Raleway:400,300,600"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      href="//fonts.googleapis.com/css?family=Ultra"
+      rel="stylesheet"
+      type="text/css"
+    />
+
+    <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/skeleton.css" />
+    <link rel="stylesheet" href="./css/custom.css" />
+
+    <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+    <!-- <link rel="icon" type="image/png" href="images/favicon.png"> -->
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="column" style="margin-top: 3%">
+          <h1>Magritte VR</h1>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="column" style="margin-top: 3%">
+          <h3>Overview</h3>
+          <p>
+            This VR project was part of an Experimental Collaborative Scholarly
+            Course at Brown called "Simulating Reality". The original idea was
+            to just create a 3D rendition of Magritte’s Painting,
+            <a
+              target="_blank"
+              href="https://www.christies.com/en/lot/lot-6327892"
+            >
+              La Vengeance</a
+            >, in VR. There is nothing more challenging than recreating the
+            works of Surrealist artists in 3D, especially the work of someone
+            like Magritte, as surrealism is meant to depict illogical,
+            unrealistic scenes and his work is some of the best, if not the
+            best. After a bit of work on the project we decided to expand its
+            scope to take full advantage of what VR offers. Magritte questions
+            the status of representation in his paintings. We felt like the best
+            way to translate that intention into the modern world would be to
+            have a VR experience that allows users to experience both possible
+            realities in this painting.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="column" style="margin-top: 3%">
+          <h3>The Experience</h3>
+          <p>
+            The viewer will be able to walk around the room and enter the
+            painting within the painting, a second ‘reality’. The user is able
+            to switch between a landscape painting and clouds painted onto the
+            wall to a window with real mountains and real clouds.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="column" style="margin-top: 3%">
+          <h3>Modelling</h3>
+          <div style="text-align: center; margin-bottom: 3%">
+            <div class="image-wrapper" style="margin-bottom: 2%">
+              <img src="./images/clouds.png" style="width: 50%" />
+            </div>
+            The Real Clouds
+            <div
+              class="image-wrapper"
+              style="margin-top: 3%; margin-bottom: 2%"
+            >
+              <img src="./images/mountains.png" style="width: 50%" />
+            </div>
+            The Real Mountains
+            <div
+              class="image-wrapper"
+              style="margin-top: 3%; margin-bottom: 2%"
+            >
+              <img src="./images/room.png" style="width: 50%" />
+            </div>
+            The Room with The Painting
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="column" style="margin-top: 3%">
+          <h3>Texturing and Shading</h3>
+          We created these paint textures in Photoshop and Blender to mimic the
+          texture of the original painting. Some of the textures were done using
+          Image Projection (such as the metal ball).
+          <div class="image-wrapper" style="margin-top: 2%; margin-bottom: 3%">
+            <img src="./images/textures.png" style="width: 70%" />
+          </div>
+          One of our biggest challenges was creating the shader for the 3D scene
+          inside the painting, so that only the parts contained inside the
+          painting would be seen, and the rest hidden.
+          <div class="image-wrapper" style="margin-top: 2%; margin-bottom: 3%">
+            <img src="./images/stencil-buffer.png" style="width: 50%" />
+          </div>
+          We found an existing resource online on something called a Stencil
+          Buffer, adapted it by writing our own shaders that preserved the
+          texture of the objects but also allowed them to “disappear” outside
+          certain boundaries. We figured out variations of the script we found
+          online for the easel, clouds, mountains, painting frame, which were
+          all using slightly different combinations of code.
+          <div class="image-wrapper" style="margin-top: 2%; margin-bottom: 3%">
+            <img src="./images/shader.png" style="width: 50%" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="column" style="margin-top: 3%">
+          <h3>Equipment</h3>
+          <p>
+            We initially only had access to an HTC Vive, but after setting up
+            our project, we realised that there were many limitations. The roof
+            in the model was low and so the painting appeared small and this was
+            because the physical room is small and the HTC Vive's recognizable
+            free space was bounded by the physical room in which it was set up.
+            We were able to touch two physical walls but not the other two. We
+            could have possibly set dressed the space so people could feel more
+            with their hands while exploring the space - prop walls, easel and
+            canvas? but does that take away or add something? We eventually got
+            access to an Oculus Quest 2 and used it for our project which
+            addressed all the limitations that were associated with the Vive.
+            After setting it all up, we also realised that it was very difficult
+            to get the users’ eye-line to line up with the exact point we would
+            need them to be at for a seamless transition between the 3D clouds
+            (real) and projected clouds (painting), so, ee decided to use a
+            button that allows users to click to switch between the 2 forms.
+            Alternatively, we could teleport people back to the exact point and
+            remove the walking component, but we felt like what made this
+            project more immersive was the ability to walk around the room.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="row">
+        <div class="column" style="margin-top: 3%">
+          <h3>Outcome</h3>
+          <p>
+            Below are side-by-side comparison images of the projected 2D world
+            (on the left) and the 3D world (on the right). The switch is
+            triggered by pressing the buttons on the sides of both controllers
+            to switch back and forth. The switch is also accompanied by ambient
+            noise of a mountainous region that switches on and off.
+          </p>
+          <div class="image-wrapper" style="margin-bottom: 3%">
+            <img src="./images/outcome-1.png" style="width: 90%" />
+          </div>
+          <div class="image-wrapper" style="margin-bottom: 3%">
+            <img src="./images/outcome-2.png" style="width: 90%" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  </body>
+</html>
